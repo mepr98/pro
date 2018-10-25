@@ -13,10 +13,12 @@ export class AuthService {
   ColeccionProductos:AngularFirestoreCollection<Product>;
   ColeccionCompras:AngularFirestoreCollection<Product>;
   productos: Observable<Product[]>;
+  compras: Observable<Product[]>;
   producDoc:AngularFirestoreDocument<Product>;
 
   constructor(public db:AngularFirestore) {
     this.productos=this.db.collection("products").valueChanges();
+    this.compras=this.db.collection("compra").valueChanges();
     this.ColeccionProductos=this.db.collection("products");
     this.ColeccionCompras=this.db.collection("compra");
     this.productos=this.ColeccionProductos.snapshotChanges().pipe(map(actions =>{
@@ -31,6 +33,9 @@ export class AuthService {
    }
   getproductos(){
     return this.productos;
+  }
+  getcompras(){
+    return this.compras;
   }
   deleteproductos(producto:Product){
     this.producDoc= this.db.doc(`products/${producto.id}`);

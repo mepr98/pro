@@ -19,9 +19,9 @@ export class HomepageComponent implements OnInit {
     });
    
   }
-  addp(){
-    console.log(this.prod);
-    this.servicio.addcompra(this.prod);
+  addp(event,product){
+    
+    this.servicio.addcompra(product);
   }
 
 

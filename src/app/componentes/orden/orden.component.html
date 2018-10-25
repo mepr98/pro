@@ -14,29 +14,21 @@
                       </tr>
                   </thead>
                   <tbody>
-                      <tr>
-                          <td class="col-sm-8 col-md-6">
-                          <div class="media">
-                                  <p class="media-heading"><a href="#">Pizza Margarita</a>
-                          </div></td>
-                          <td class="col-sm-1 col-md-1" style="text-align: center">
-                          <input type="text" class="form-control" value="2">
-                          </td>
-                          <td class="col-sm-1 col-md-1 text-center"><strong>BsS. 50</strong></td>
-                          <td class="col-sm-1 col-md-1 text-center"><strong>BsS. 100</strong></td>
-                      </tr>
-  
-                      <tr>
-                          <td class="col-sm-8 col-md-6">
-                          <div class="media">
-                                  <p class="media-heading"><a href="#">Sushi Taco</a>
-                          </div></td>
-                          <td class="col-sm-1 col-md-1" style="text-align: center">
-                          <input type="text" class="form-control" value="2">
-                          </td>
-                          <td class="col-sm-1 col-md-1 text-center"><strong>BsS. 50</strong></td>
-                          <td class="col-sm-1 col-md-1 text-center"><strong>BsS. 100</strong></td>
-                      </tr>
+                     <ul>
+                         <li *ngFor="let c of compras">
+                                <tr>
+                                        <td class="col-sm-8 col-md-6">
+                                        <div class="media">
+                                                <p class="media-heading"><a href="#">{{c.Name}}</a>
+                                        </div></td>
+                                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                                        <input type="text" class="form-control" value="2">
+                                        </td>
+                                        <td class="col-sm-1 col-md-1 text-center"><strong>{{c.Precio}}</strong></td>
+                                        <td class="col-sm-1 col-md-1 text-center"><strong>{{c.Precio}}</strong></td>
+                                    </tr>
+                         </li>
+                     </ul>                   
   
                       <tr>
                           <td>   </td>

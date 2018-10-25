@@ -11,6 +11,7 @@ export class OrdenComponent implements OnInit {
 
   prod= {} as Product;
   productos = [];
+  compras = [];
   editingp:Product;
   editing:boolean;
   constructor(public servicio: AuthService) { }
@@ -21,14 +22,14 @@ export class OrdenComponent implements OnInit {
     this.servicio.getproductos().subscribe(products =>{
       this.productos=products;
       });
+      this.servicio.getcompras().subscribe(compras =>{
+        this.compras=compras;
+        });
   }
   deletep(event,product){
     this.servicio.deletecompra(product);
   }
-  addp(){
-    console.log(this.prod);
-    this.servicio.addcompra(this.prod);
-  }
+  
 
   editp(event,product){
     this.editingp=product;
