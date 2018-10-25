@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {AuthService} from './shared/auth.service';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import {AuthService} from './shared/auth.service';
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    FormsModule,
     
   ],
   providers: [],

@@ -28,7 +28,15 @@
                     <td>{{p.Precio}}</td>
                     <td><a href="#">Si</a></td>
                     <th scope="col"> <button (click)="deletep($event,p)">Eliminar</button></th>
-                    <td><a href="#">Editar</a></td>
+                    <td><button (click)="editp($event,p)">Editar</button></td>
+                   <div *ngIf="editing && editingp.id == p.id">
+                     <form (ngsubmit)="up()">
+                       <input type="text" name="Name" [(ngModel)]="editingp.Name">                       
+                       <input type="number" name="Price" [(ngModel)]="editingp.Price">
+                      <button (click)="up()" type="submit">actualizar</button>
+                     </form>
+                     
+                   </div>
                     
                   </tr>
                  
@@ -37,8 +45,20 @@
            </li>
          </ul>
         </table>
+
+        <form (ngsubmit)="addp()">
+          <input type="text" name="Name" [(ngModel)]="prod.Name">
+          <input type="text" name="id" [(ngModel)]="prod.id">
+          <input type="number" name="Precio" [(ngModel)]="prod.Precio">
+          <button (click)="addp()" type="submit">
+            Agregar
+          </button>
+        
+        </form>
+
       </div>
     </div>
+
   </div>
    
   

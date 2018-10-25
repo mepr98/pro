@@ -33,4 +33,11 @@ export class AuthService {
     this.producDoc= this.db.doc(`products/${producto.id}`);
     this.producDoc.delete();
   }
+  addproductos(producto:Product){
+    this.ColeccionProductos.add(producto)
+  }
+  uppro(producto:Product){
+    this.producDoc = this.db.doc(`products/${producto.id}`);
+    this.producDoc.update(producto);
+  }
   }
