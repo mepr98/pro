@@ -17,7 +17,6 @@ import {environment} from '../environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
-import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AuthService} from './shared/auth.service';
 
 @NgModule({
@@ -40,14 +39,14 @@ import {AuthService} from './shared/auth.service';
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
     AppRoutingModule,
-    AngularFireAuthModule,
+    
     AngularFireDatabaseModule,
     AngularFireModule,
-    AngularFireModule.initializeApp(environment.firebase,'UmakeIt'),
+    AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     
   ],
-  providers: [AuthService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

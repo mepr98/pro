@@ -13,8 +13,8 @@ export class AuthService {
   productos: Observable<Product[]>;
   producDoc;
 
-  constructor(public db: AngularFirestore) {
-    this.productos=this.db.collection("productos").valueChanges();
+  constructor(public db:AngularFirestore) {
+    this.productos=this.db.collection("products").valueChanges();
    }
   getproductos(){
     return this.productos;
