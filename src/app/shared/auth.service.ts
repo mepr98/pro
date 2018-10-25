@@ -11,19 +11,22 @@ import{map} from 'rxjs/operators'
 })
 export class AuthService {
   ColeccionProductos:AngularFirestoreCollection<Product>;
+  ColeccionCompras:AngularFirestoreCollection<Product>;
   productos: Observable<Product[]>;
   producDoc:AngularFirestoreDocument<Product>;
 
   constructor(public db:AngularFirestore) {
     this.productos=this.db.collection("products").valueChanges();
     this.ColeccionProductos=this.db.collection("products");
+    this.ColeccionCompras=this.db.collection("compra");
     this.productos=this.ColeccionProductos.snapshotChanges().pipe(map(actions =>{
       return actions.map(a =>{
        const data = a.payload.doc.data() as Product;
        data.id=a.payload.doc.id;
        return data;
       })
-    }))                              
+    }))   
+
 
    }
   getproductos(){
@@ -33,8 +36,16 @@ export class AuthService {
     this.producDoc= this.db.doc(`products/${producto.id}`);
     this.producDoc.delete();
   }
+  deletecompra(producto:Product){
+    this.producDoc= this.db.doc(`compra/${producto.id}`);
+    this.producDoc.delete();
+  }
+  
   addproductos(producto:Product){
     this.ColeccionProductos.add(producto)
+  }
+  addcompra(producto:Product){
+    this.ColeccionCompras.add(producto)
   }
   uppro(producto:Product){
     this.producDoc = this.db.doc(`products/${producto.id}`);
