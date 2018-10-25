@@ -1,12 +1,13 @@
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:100,300,400,500,600,700|Playfair+Display:400,700" rel="stylesheet">
+<app-navbar></app-navbar>
 <body class="home">
 
   <div class="container h-100" >
     <div class="row h-100 justify-content-center align-items-center">
-      <div class="col-sm-12 col-md-12" id="compras">
+      <div class="col-sm-12 col-md-12" id="compras" >
         <br>
         <h1>Administrar Productos</h1>
-        <table class="table">
+        <table class="table" >
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -14,43 +15,44 @@
               <th scope="col">Producto</th>
               <th scope="col">Precio</th>
               <th scope="col">Disponibilidad</th>
+              <th scope="col">Eliminar</th>
               <th scope="col">Editar</th>
               
             </tr>
           </thead>
-         <ul>
-           <li *ngFor="let p of productos">
-              <tbody>
+
+              <tbody *ngFor="let p of productos">
                   <tr>
                     <th scope="row">1</th>
-                    <td>Imagen</td>
+                    <td>{{p.Imagen}}</td>
                     <td>{{p.Name}}</td>
                     <td>{{p.Precio}}</td>
                     <td><a href="#">Si</a></td>
-                    <th scope="col"> <button (click)="deletep($event,p)">Eliminar</button></th>
-                    <td><button (click)="editp($event,p)">Editar</button></td>
+                    <th scope="col"> <button class="btn btn-danger" (click)="deletep($event,p)">Eliminar</button></th>
+                    <td><button class="btn btn-info" (click)="editp($event,p)">Editar</button></td>
+                  </tr> 
+
+                  <tr>
                    <div *ngIf="editing && editingp.id == p.id">
                      <form (ngsubmit)="up()">
-                       <input type="text" name="Name" [(ngModel)]="editingp.Name">                       
-                       <input type="number" name="Price" [(ngModel)]="editingp.Price">
-                      <button (click)="up()" type="submit">actualizar</button>
-                     </form>
+                       <input placeholder="Nombre" type="text" name="Name" [(ngModel)]="editingp.Name">                       
+                       <input placeholder="Precio" type="number" name="Precio" [(ngModel)]="editingp.Precio">
+                      <button class="btn btn-primary" (click)="up()" type="submit">actualizar</button>
+                     </form>                     
+                   </div>     
+                   </tr>
+
+
                      
-                   </div>
-                    
-                  </tr>
-                 
-                  
-                </tbody>
-           </li>
-         </ul>
+              </tbody>
+
         </table>
 
         <form (ngsubmit)="addp()">
           <input type="text" name="Name" [(ngModel)]="prod.Name">
-          <input type="text" name="id" [(ngModel)]="prod.id">
+          <input type="text" name="Imagen" [(ngModel)]="prod.Imagen">
           <input type="number" name="Precio" [(ngModel)]="prod.Precio">
-          <button (click)="addp()" type="submit">
+          <button class="btn btn-primary" (click)="addp()" type="submit">
             Agregar
           </button>
         
