@@ -8,11 +8,15 @@ import {AuthService}from '../../shared/auth.service';
 })
 export class HomepageComponent implements OnInit {
 
+  productos = [];
+
   constructor(public servicio: AuthService) { }
 
   ngOnInit() {
-    this.servicio.getproductos().subscribe(products =>{console.log(products);});
-
+    this.servicio.getproductos().subscribe(products =>{console.log(products);
+    this.productos=products;
+    });
+   
   }
 
 

@@ -11,7 +11,7 @@ export class NavbarComponent implements OnInit {
   constructor(public servicio: AuthService) { }
 
   ngOnInit() {
-    this.servicio.getproductos().subscribe(products =>{console.log(products);});
+    
 
   }
 

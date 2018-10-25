@@ -1,8 +1,9 @@
+import { URL, Url } from "url";
 
 
 export interface Product{
     Name ?: string;
-    descripcion?:string;
+    foto?:Url;
     id?:number;
     precio?:number;
 }
