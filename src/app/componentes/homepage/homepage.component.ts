@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AuthService}from '../../shared/auth.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(public servicio: AuthService) { }
 
   ngOnInit() {
+    this.servicio.getproductos().subscribe(products =>{console.log(products);});
+
   }
+
 
 }
