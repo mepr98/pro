@@ -18,6 +18,7 @@ import { AngularFireModule } from '@angular/fire';
 import {AngularFirestoreModule, AngularFirestore } from '@angular/fire/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {AuthService} from './shared/auth.service';
+import { AngularFireAuthModule } from '@angular/fire/auth';
 import {FormsModule} from '@angular/forms';
 
 @NgModule({
@@ -45,10 +46,11 @@ import {FormsModule} from '@angular/forms';
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    AngularFireAuthModule,
     FormsModule,
     
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

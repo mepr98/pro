@@ -1,31 +1,65 @@
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-<body id="loginForm">
+
+<div *ngIf="auth.user | async; then authenticated else guest" >
+        <!-- template will replace this div -->
+</div>
 
 
-	<div class="container">
+<!-- User NOT logged in -->
+<ng-template #guest >
 
-		<div id="panel-inicio">
-			<div class="div-centro">
-    			<div class="panel">
-   					<h2>Bienvenido</h2>
-   					<p>Porfavor ingrese sus datos para iniciar sesion!</p>
-   				</div>
-    			<form action="dashboard.html">
-        			<div class="form-group">
-            			<input type="email" class="form-control" id="inputEmail" placeholder="Email">
-        			</div>
+    <div class="pen-title">
+      <h1>uMakeIt</h1>
+    </div>
+    <!-- Form Module-->
+    <div class="module form-module">
+      <div class="toggle">
+ 
+      </div>
+      <div class="form">
+        <h2>Ingresar a su cuenta</h2>
+        <form>
+          <button (click)="auth.googleLogin()">
+                <i class="fa fa-google"></i> Connect Google
+          </button>
+        </form>
+      </div>
+     
+      <div class="cta"></div>
+    </div>
 
-        			<div class="form-group">
-            			<input type="password" class="form-control" id="inputPassword" placeholder="Contraseña">
-        			</div>
-        			<div class="forgot">
-        				<a href="#">Olvido la contraseña?</a>
-					</div>
-        			<button type="submit" class="btn btn-primary" routerLink="/home">Iniciar Sesion</button>
 
-    			</form>
-    		</div>
+</ng-template>
 
-		</div>
-	</div>
-</body>
+
+<!-- User logged in -->
+<ng-template #authenticated>
+
+    <div *ngIf="auth.user | async as user">
+ 
+                    <div class="pen-title">
+                      <h1>uMakeIt</h1>
+                    </div>
+                    <!-- Form Module-->
+                    <div class="module form-module">
+                      <div class="toggle">
+                 
+                      </div>
+                      <div class="form">
+                        <h2>Bienvenido, {{ user.displayName }}</h2>
+                        <form>
+                          <a href="./home" id="button" >Continuar</a>
+                          <p></p>
+                          <button (click)="auth.signOut()">Logout</button>
+                        </form>
+                      </div>
+                     
+                      <div class="cta"></div>
+                    </div>
+
+
+    </div>
+
+</ng-template>
+
+
+
