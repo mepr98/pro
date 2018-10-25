@@ -4,8 +4,38 @@
 
   <div class="container h-100" >
     <div class="row h-100 justify-content-center align-items-center">
+
       <div class="col-sm-12 col-md-12" id="compras" >
-        <br>
+        <h1>Agregar Productos</h1>
+        <form (ngsubmit)="addp()">
+         
+          <div class="row">
+            <div class="col">
+              <label for="Name">Nombre: </label>
+              <input type="text" name="Name" [(ngModel)]="prod.Name">
+            </div>
+            <div class="col">
+              <label for="Imagen">Imagen URL: </label>
+              <input type="text" name="Imagen" [(ngModel)]="prod.Imagen">
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <label for="Precio">Precio: </label>
+              <input type="number" name="Precio" [(ngModel)]="prod.Precio">
+            </div>
+            <div class="col">
+                <button class="btn btn-primary" (click)="addp()" type="submit"> Agregar </button>
+            </div>
+          </div>
+          
+          
+        
+        </form>
+      </div>
+
+      <div class="col-sm-12 col-md-12" id="compras" >
         <h1>Administrar Productos</h1>
         <table class="table" >
           <thead>
@@ -48,15 +78,7 @@
 
         </table>
 
-        <form (ngsubmit)="addp()">
-          <input type="text" name="Name" [(ngModel)]="prod.Name">
-          <input type="text" name="Imagen" [(ngModel)]="prod.Imagen">
-          <input type="number" name="Precio" [(ngModel)]="prod.Precio">
-          <button class="btn btn-primary" (click)="addp()" type="submit">
-            Agregar
-          </button>
         
-        </form>
 
       </div>
     </div>
