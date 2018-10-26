@@ -8,6 +8,7 @@ import { AngularFirestore, AngularFirestoreDocument } from '@angular/fire/firest
 import { Observable, of } from 'rxjs';
 import { switchMap} from 'rxjs/operators';
 
+
 interface User {
   uid: string;
   email: string;
@@ -16,10 +17,14 @@ interface User {
   favoriteColor?: string;
 }
 
-
 @Injectable({ providedIn: 'root' })
 export class AuthService {
 
+
+  
+
+
+  
   user: Observable<User>;
 
   constructor(
@@ -68,6 +73,8 @@ export class AuthService {
     return userRef.set(data, { merge: true })
 
   }
+
+  getuser(){}
 
 
   signOut() {
