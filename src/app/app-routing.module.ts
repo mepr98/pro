@@ -9,6 +9,7 @@ import {CambioComponent} from './componentes/cambio/cambio.component';
 import {ComprasComponent} from './componentes/compras/compras.component';
 import {OrdenComponent} from './componentes/orden/orden.component';
 import {AuthService} from './core/auth.service';
+import { AlertModule } from 'ngx-bootstrap';
 
 
 
@@ -24,7 +25,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [AlertModule.forRoot(),RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
