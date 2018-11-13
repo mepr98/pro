@@ -9,6 +9,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { ModalModule } from 'ngx-bootstrap/modal';
 import { AdminComponent } from './componentes/admin/admin.component';
 import { ComprasComponent } from './componentes/compras/compras.component';
 import { OrdenComponent } from './componentes/orden/orden.component';
@@ -43,6 +44,7 @@ import { BuscarComponent } from './componentes/buscar/buscar.component';
     AppRoutingModule,
     TooltipModule.forRoot(),
     BsDropdownModule.forRoot(),
+    ModalModule.forRoot(),
     AppRoutingModule,
     
     AngularFireDatabaseModule,
