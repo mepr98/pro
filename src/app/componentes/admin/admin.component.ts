@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService}from '../../shared/auth.service';
 import { Product } from 'src/app/Models/productos';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { privateEncrypt } from 'crypto';
+
 
 @Component({
   selector: 'app-admin',
@@ -10,9 +13,13 @@ import { Product } from 'src/app/Models/productos';
 export class AdminComponent implements OnInit {
   prod= {} as Product;
   productos = [];
+  
+
+  
   editingp:Product;
   editing:boolean;
-  constructor(public servicio: AuthService) { }
+  constructor(public servicio: AuthService,public s: AngularFirestore ) { }
+  
 
   ngOnInit() {
     this.servicio.getproductos().subscribe(products =>{
@@ -38,5 +45,7 @@ export class AdminComponent implements OnInit {
     this.editingp = {} as Product;
     this.editing=false;
   }
+  
+  
 
 }
