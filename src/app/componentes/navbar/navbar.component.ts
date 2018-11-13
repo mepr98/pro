@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../../core/auth.service';
+import { AngularFireDatabase } from '@angular/fire/database';
+import { Subject, observable } from 'rxjs';
+import {Observable} from 'rxjs';
+import { timer, combineLatest } from 'rxjs';
+import { Product } from 'src/app/Models/productos';
+import {AuthService}from '../../shared/auth.service';
+import { AngularFirestore } from '@angular/fire/firestore';
+
+
 
 
 @Component({
@@ -7,13 +15,14 @@ import { AuthService } from '../../core/auth.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
  usuarios=[];
-  constructor(public auth: AuthService) { }
+ 
+  constructor(public servicio: AngularFirestore) { }
 
-  ngOnInit() {
+  ngOnInit() {}
     
-
-  }
+  
+  
 
 }

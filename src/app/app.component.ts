@@ -2,6 +2,8 @@ import { Component,OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import * as firebase from 'firebase/app';
 import {AuthService} from './shared/auth.service';
+import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'app-root',
@@ -10,6 +12,7 @@ import {AuthService} from './shared/auth.service';
 })
 export class AppComponent {
   title = 'proyect';
+  searchterm: string;
  
   constructor(private auth: AuthService, public db: AngularFireDatabase){}
 
@@ -18,6 +21,9 @@ export class AppComponent {
     //Add 'implements OnInit' to the class.
     
     
+  }
+  search($event){
+    let q = $event.target.value;
   }
   
 }
