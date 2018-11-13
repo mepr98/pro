@@ -14,6 +14,10 @@ export class OrdenComponent implements OnInit {
   compras = [];
   editingp:Product;
   editing:boolean;
+  sub:number;
+
+  
+
   constructor(public servicio: AuthService) { }
 
  

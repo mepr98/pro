@@ -20,6 +20,8 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import {AuthService} from './shared/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {FormsModule} from '@angular/forms';
+import { BuscarComponent } from './componentes/buscar/buscar.component';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +33,7 @@ import {FormsModule} from '@angular/forms';
     ComprasComponent,
     OrdenComponent,
     CambioComponent,
+    BuscarComponent,
     
   ],
   imports: [
@@ -46,6 +49,7 @@ import {FormsModule} from '@angular/forms';
     AngularFireModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
+    
     AngularFireAuthModule,
     FormsModule,
     

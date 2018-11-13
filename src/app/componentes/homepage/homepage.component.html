@@ -1,4 +1,6 @@
 <app-navbar></app-navbar>
+        <div>
+  
 
         <div *ngFor="let p of productos" style="background: #ffdfba;" class="card" id="card1">
           <img src="{{p.Imagen}}" class="" alt="">
@@ -8,7 +10,9 @@
             <a><div  class="btn btn-primary"  (click)="addp($event,p)">Comprar</div></a>
             
           </div>
+
         </div>
+        
 
     
    

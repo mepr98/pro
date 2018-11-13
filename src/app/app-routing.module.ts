@@ -8,6 +8,8 @@ import {AdminComponent} from './componentes/admin/admin.component';
 import {CambioComponent} from './componentes/cambio/cambio.component';
 import {ComprasComponent} from './componentes/compras/compras.component';
 import {OrdenComponent} from './componentes/orden/orden.component';
+import {BuscarComponent} from './componentes/buscar/buscar.component';
+
 import {AuthService} from './core/auth.service';
 import { AlertModule } from 'ngx-bootstrap';
 
@@ -21,6 +23,8 @@ const routes: Routes = [
   {path:'cambio',component:CambioComponent},
   {path:'compras',component:ComprasComponent},
   {path:'orden',component:OrdenComponent},
+  {path:'buscar',component:BuscarComponent},
+  
   
 ];
 

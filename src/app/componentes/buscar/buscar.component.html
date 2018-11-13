@@ -1,0 +1,7 @@
+<app-navbar></app-navbar>
+<input type="text" [(ngModel)]="searchterm" (change)="search($event)">
+<ul *ngFor="let product of products">
+  <li>
+    {{product.Name}};
+  </li>
+</ul>

@@ -9,12 +9,9 @@ import { AuthService } from '../../core/auth.service';
 })
 export class LoginComponent{
 
+  
 
-  constructor(public auth: AuthService) { 
-  	
-
-
-  }
+  constructor(public auth: AuthService) { }
 
   
 
