@@ -40,6 +40,28 @@ export class OrdenComponent implements OnInit {
     this.editing=!this.editing;
 
   }
+
+  getSubTotal() {
+    let total = 0;
+    for (var i = 0; i < this.compras.length; i++) {
+        
+        if (this.compras[i].Precio) {
+            total += this.compras[i].Precio;
+
+        }
+    }
+    return total;
+}
+
+  getIva() {
+    return this.getSubTotal()*0.16;
+  }
+
+  getTotal(){
+    return this.getSubTotal() + this.getIva();
+  }
+
+
   up(){
 this.servicio.uppro(this.editingp);
 this.editingp = {} as Product;

@@ -31,25 +31,29 @@
                          </tr>
              
   
-                      <tr *ngFor="let c of compras">
+                      <tr >
                           <td>   </td>
                           <td>   </td>
                           <td><h5>Subtotal</h5></td>
+<<<<<<< HEAD
                           <td class="text-right"><h5><strong></strong></h5></td>
+=======
+                          <td class="text-right"><h5><strong>{{getSubTotal()}}</strong></h5></td>
+>>>>>>> 7f7676d22ffe8aff3284853a47155e7dc52982c0
                       </tr>
   
                       <tr>
                           <td>   </td>
                           <td>   </td>
                           <td><h5>IVA 16%</h5></td>
-                          <td class="text-right"><h5><strong></strong></h5></td>
+                          <td class="text-right"><h5><strong>{{getIva()}}</strong></h5></td>
                       </tr>
   
                       <tr>
                           <td>   </td>
                           <td>   </td>
                           <td><h3>Total</h3></td>
-                          <td class="text-right"><h3><strong></strong></h3></td>
+                          <td class="text-right"><h3><strong>{{getTotal()}}</strong></h3></td>
                       </tr>
                       <tr>
                           <td>   </td>

@@ -17,7 +17,7 @@ export class HomepageComponent implements OnInit {
   productos = [];
   modalRef: BsModalRef;
   p= {} as Product;
-  constructor(public servicio: AuthService, private modalService: BsModalService) { }
+  constructor(public servicio: AuthService, private modalService: BsModalService, private router: Router) { }
 
   openModal(template: TemplateRef<any>, producto: Product) {
     this.modalRef = this.modalService.show(template);
@@ -38,7 +38,7 @@ export class HomepageComponent implements OnInit {
     product.glutenf = glutenf;
     this.servicio.addcompra(product);
     this.modalRef.hide()
-   
+    this.router.navigate(['orden']);
   }
 
 

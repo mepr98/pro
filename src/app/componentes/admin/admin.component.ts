@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService}from '../../shared/auth.service';
 import { Product } from 'src/app/Models/productos';
-import { AngularFirestore } from '@angular/fire/firestore';
-
-
 
 @Component({
   selector: 'app-admin',
@@ -11,15 +8,11 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-  prod= {} as Product;
+   prod= {} as Product;
   productos = [];
-  
-
-  
   editingp:Product;
   editing:boolean;
-  constructor(public servicio: AuthService,public s: AngularFirestore ) { }
-  
+  constructor(public servicio: AuthService) { }
 
   ngOnInit() {
     this.servicio.getproductos().subscribe(products =>{
@@ -41,11 +34,9 @@ export class AdminComponent implements OnInit {
 
   }
   up(){
-    this.servicio.uppro(this.editingp);
-    this.editingp = {} as Product;
-    this.editing=false;
+this.servicio.uppro(this.editingp);
+this.editingp = {} as Product;
+this.editing=false;
   }
-  
-  
 
 }

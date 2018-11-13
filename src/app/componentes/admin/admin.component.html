@@ -33,12 +33,11 @@
           
         
         </form>
-        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
       </div>
 
       <div class="col-sm-12 col-md-12" id="compras" >
         <h1>Administrar Productos</h1>
-        <table class="table" id="h">
+        <table class="table" >
           <thead>
             <tr>
               <th scope="col">#</th>
@@ -53,9 +52,7 @@
           </thead>
 
               <tbody *ngFor="let p of productos">
-                
                   <tr>
-                    
                     <th scope="row">1</th>
                     <td>{{p.Imagen}}</td>
                     <td>{{p.Name}}</td>
