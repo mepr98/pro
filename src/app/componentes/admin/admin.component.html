@@ -33,7 +33,7 @@
           
         
         </form>
-        <input type="search" ng-model="filtro" placeholder="Ingrese filtro...">
+        <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
       </div>
 
       <div class="col-sm-12 col-md-12" id="compras" >
@@ -52,7 +52,7 @@
             </tr>
           </thead>
 
-              <tbody ng-repeat="p in productos | filter: filtro as resultado">
+              <tbody *ngFor="let p of productos">
                 
                   <tr>
                     
