@@ -18,9 +18,9 @@
    
 
  
-<ng-template #template></ng-template>
+<ng-template #template>
   <div class="modal-header">
-    <h4 class="modal-title pull-left">Agregar extras a </h4>
+    <h4 class="modal-title pull-left">Agregar extras a {{p.Name}}</h4>
     <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
       <span aria-hidden="true">&times;</span>
     </button>
@@ -54,6 +54,7 @@
     <a><div  class="btn btn-primary"  (click)="addp($event,p,queso,tocineta,gluten_free)">Comprar</div></a>
   </div>
 </ng-template>
+   
    
 
 

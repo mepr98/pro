@@ -14,7 +14,7 @@ export class AppComponent {
   title = 'proyect';
   searchterm: string;
  
-  constructor(){}
+  constructor(private auth: AuthService, public db: AngularFireDatabase){}
 
   ngOnInit()  {
     //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
@@ -22,6 +22,8 @@ export class AppComponent {
     
     
   }
-  
+  search($event){
+    let q = $event.target.value;
+  }
   
 }
