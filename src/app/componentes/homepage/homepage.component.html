@@ -26,33 +26,32 @@
     </button>
   </div>
   <div class="modal-body">
-    {{p.Name}}
     
+    <form>
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+      <input class="form-check-input" type="checkbox" name="queso" >
       <label class="form-check-label" for="defaultCheck1">
         Extra Queso
       </label>
     </div>
 
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+      <input class="form-check-input" type="checkbox" name="tocineta" >
       <label class="form-check-label" for="defaultCheck1">
         Extra Tocineta
       </label>
     </div>
 
     <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+      <input class="form-check-input" type="checkbox" name="gluten_free" >
       <label class="form-check-label" for="defaultCheck1">
         Gluten-Free
       </label>
     </div>
+  </form>
 
 
-
-
-    <a><div  class="btn btn-primary"  (click)="addp($event,p)">Comprar</div></a>
+    <a><div  class="btn btn-primary"  (click)="addp($event,p,queso,tocineta,gluten_free)">Comprar</div></a>
   </div>
 </ng-template>
    

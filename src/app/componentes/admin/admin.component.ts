@@ -8,7 +8,7 @@ import { Product } from 'src/app/Models/productos';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
-   prod= {} as Product;
+  prod= {} as Product;
   productos = [];
   editingp:Product;
   editing:boolean;
@@ -34,9 +34,9 @@ export class AdminComponent implements OnInit {
 
   }
   up(){
-this.servicio.uppro(this.editingp);
-this.editingp = {} as Product;
-this.editing=false;
+    this.servicio.uppro(this.editingp);
+    this.editingp = {} as Product;
+    this.editing=false;
   }
 
 }
