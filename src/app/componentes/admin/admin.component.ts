@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService}from '../../shared/auth.service';
 import { Product } from 'src/app/Models/productos';
 import { AngularFirestore } from '@angular/fire/firestore';
-import { privateEncrypt } from 'crypto';
+
 
 
 @Component({
