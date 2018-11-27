@@ -1,0 +1,48 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+<app-navbar></app-navbar>
+<body>
+  <div class="container h-100" >
+    <div class="row h-100 justify-content-center align-items-center" >
+      <div class="col-sm-12 col-md-6" id="compras">
+        <h4 class="title text-center">Historial de compra</h4>
+              <table class="table table-hover">
+                  <thead>
+                      <tr>
+                          <th>Producto</th>
+                          <th class="text-center">Precio</th>
+                          <th class="text-center">Total</th>
+                          <th class="text-center"></th>
+                      </tr>
+                  </thead>
+                  <tbody>
+ 
+                         <tr *ngFor="let c of historial">
+                               
+                                        <td class="col-sm-8 col-md-6">
+                             
+                                                <a href="#">{{c.Name}}</a></td>
+
+                                        <td class="col-sm-1 col-md-1 text-center"><strong>{{c.Precio}}</strong></td>
+                                        <td class="col-sm-1 col-md-1 text-center"><strong>{{c.Precio}}</strong></td>
+                                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                                        Volver a comprar
+                                        </td>
+                                
+                         </tr>
+             
+  
+                      
+                     
+                     
+
+
+
+
+
+
+                  </tbody>
+              </table>
+          </div>
+    </div>
+  </div>
+</body>

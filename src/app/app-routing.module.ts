@@ -9,6 +9,7 @@ import {CambioComponent} from './componentes/cambio/cambio.component';
 import {ComprasComponent} from './componentes/compras/compras.component';
 import {OrdenComponent} from './componentes/orden/orden.component';
 import {BuscarComponent} from './componentes/buscar/buscar.component';
+import {HistorialComponent} from './componentes/historial/historial.component';
 
 import {AuthService} from './core/auth.service';
 import { AlertModule } from 'ngx-bootstrap';
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'compras',component:ComprasComponent},
   {path:'orden',component:OrdenComponent},
   {path:'buscar',component:BuscarComponent},
+  {path:'historial',component:HistorialComponent},
   
   
 ];

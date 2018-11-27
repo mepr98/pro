@@ -22,6 +22,7 @@ import {AuthService} from './shared/auth.service';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import {FormsModule} from '@angular/forms';
 import { BuscarComponent } from './componentes/buscar/buscar.component';
+import { HistorialComponent } from './componentes/historial/historial.component';
 
 
 @NgModule({
@@ -35,6 +36,7 @@ import { BuscarComponent } from './componentes/buscar/buscar.component';
     OrdenComponent,
     CambioComponent,
     BuscarComponent,
+    HistorialComponent,
     
   ],
   imports: [

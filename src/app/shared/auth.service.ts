@@ -12,14 +12,20 @@ import{map} from 'rxjs/operators'
 export class AuthService {
   ColeccionProductos:AngularFirestoreCollection<Product>;
   ColeccionCompras:AngularFirestoreCollection<Product>;
+  ColeccionHistorial:AngularFirestoreCollection<Product>;
+
   productos: Observable<Product[]>;
+  historial: Observable<Product[]>;
   compras: Observable<Product[]>;
+
   producDoc:AngularFirestoreDocument<Product>;
 
   constructor(public db:AngularFirestore) {
     this.productos=this.db.collection("products").valueChanges();
+    this.historial=this.db.collection("historial").valueChanges();
     this.compras=this.db.collection("compra").valueChanges();
     this.ColeccionProductos=this.db.collection("products");
+    this.ColeccionHistorial=this.db.collection("historial");
     this.ColeccionCompras=this.db.collection("compra");
     this.productos=this.ColeccionProductos.snapshotChanges().pipe(map(actions =>{
       return actions.map(a =>{
@@ -37,6 +43,10 @@ export class AuthService {
   getcompras(){
     return this.compras;
   }
+  gethistorial(){
+    return this.historial;
+  }
+
   deleteproductos(producto:Product){
     this.producDoc= this.db.doc(`products/${producto.id}`);
     this.producDoc.delete();
@@ -45,13 +55,21 @@ export class AuthService {
     this.producDoc= this.db.doc(`compra/${producto.id}`);
     this.producDoc.delete();
   }
+
+ 
   
+
   addproductos(producto:Product){
     this.ColeccionProductos.add(producto)
   }
   addcompra(producto:Product){
     this.ColeccionCompras.add(producto)
   }
+  addhistorial(producto:Product){
+    this.ColeccionHistorial.add(producto)
+  }
+
+
   uppro(producto:Product){
     this.producDoc = this.db.doc(`products/${producto.id}`);
     this.producDoc.update(producto);
