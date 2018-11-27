@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService}from '../../shared/auth.service';
 import { Product } from 'src/app/Models/productos';
 import { AfterViewChecked } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
 
 declare let paypal: any;
 
@@ -21,7 +22,7 @@ export class OrdenComponent implements OnInit {
 
   
 
-  constructor(public servicio: AuthService) { }
+  constructor(public servicio: AuthService, private router: Router) { }
 
  
 
@@ -33,7 +34,8 @@ export class OrdenComponent implements OnInit {
         this.compras=compras;
         });
   }
-  deletep(event,product){
+  
+  deleteCarrito(product){
     this.servicio.deletecompra(product);
   }
   
@@ -41,6 +43,11 @@ export class OrdenComponent implements OnInit {
   editp(event,product){
     this.editingp=product;
     this.editing=!this.editing;
+
+  }
+
+  addToHistorial(product){
+    this.servicio.addhistorial(product);
 
   }
 
@@ -98,6 +105,13 @@ addScript: boolean = false;
     onAuthorize: (data, actions) => {
       return actions.payment.execute().then((payment) => {
         //Do something when payment is successful.
+        for (var i = this.compras.length - 1; i >= 0; i--) {
+          this.addToHistorial(this.compras[i])
+          this.deleteCarrito(this.compras[i])
+        }
+
+        this.router.navigate(['historial']);
+
       })
     }
   };

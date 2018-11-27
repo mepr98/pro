@@ -52,7 +52,7 @@ export class AuthService {
     this.producDoc.delete();
   }
   deletecompra(producto:Product){
-    this.producDoc= this.db.doc(`compra/${producto.id}`);
+    this.producDoc= this.db.doc(`orden/${producto.id}`);
     this.producDoc.delete();
   }
 

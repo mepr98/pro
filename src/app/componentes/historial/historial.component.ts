@@ -2,6 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {AuthService}from '../../shared/auth.service';
 import { Product } from 'src/app/Models/productos';
 import { AfterViewChecked } from '@angular/core';
+import { Router,ActivatedRoute } from '@angular/router';
+import { TemplateRef } from '@angular/core';
+import { BsModalService } from 'ngx-bootstrap/modal';
+import { BsModalRef } from 'ngx-bootstrap/modal/bs-modal-ref.service';
+
 
 @Component({
   selector: 'app-historial',
@@ -18,7 +23,7 @@ export class HistorialComponent implements OnInit {
 
   
 
-  constructor(public servicio: AuthService) { }
+  constructor(public servicio: AuthService, private modalService: BsModalService, private router: Router) { }
 
  
 
@@ -40,7 +45,11 @@ export class HistorialComponent implements OnInit {
     this.editing=!this.editing;
 
   }
-
+  addp(event,product){
+ 
+    this.servicio.addcompra(product);
+    this.router.navigate(['orden']);
+  }
 
 
   up(){
